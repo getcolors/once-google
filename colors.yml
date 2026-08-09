@@ -1,0 +1,25 @@
+profile: once-google
+workdir: .colors
+
+once:
+  applications:
+    - host: google.bigconfig.online
+      image: ghcr.io/getcolors/colors-website:latest
+
+provider-compute: google
+provider-smtp: resend
+provider-dns: cloudflare
+provider-backend: local
+compute-prevent-destroy: true
+
+google-project: once-504515
+google-region: europe-west4
+google-zone: europe-west4-b
+google-name: once-google
+google-machine-type: t2a-standard-1
+google-image-project: ubuntu-os-cloud
+google-image-family: ubuntu-2404-lts-arm64
+google-image-id: projects/ubuntu-os-cloud/global/images/ubuntu-2404-noble-arm64-v20260723
+google-subnet-cidr: 10.20.1.0/24
+google-boot-disk-size-gb: 30
+google-ssh-authorized-keys: ~/.ssh/id_ed25519.pub
